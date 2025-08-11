@@ -56,13 +56,13 @@
             "    resources:",
             "        address:",
             "            classes:",
-            "                repository: Sylius\\B2BKit\\Repository\\AddressRepository",
+            "                repository: App\\Repository\\AddressRepository",
             "",
             "sylius_customer:",
             "    resources:",
             "        customer:",
             "            classes:",
-            "                repository: Sylius\\B2BKit\\Repository\\CustomerRepository",
+            "                repository: App\\Repository\\CustomerRepository",
             ""
           ],
           "executable": false
@@ -71,6 +71,46 @@
           "contents": [
             "sylius_b2b_suite:",
             "    resource: \"@SyliusB2BKitPlugin/config/routes/routes.yaml\"",
+            ""
+          ],
+          "executable": false
+        },
+        "src/Repository/AddressRepository.php": {
+          "contents": [
+            "<?php",
+            "",
+            "declare(strict_types=1);",
+            "",
+            "namespace App\\Repository;",
+            "",
+            "use Sylius\\B2BKit\\Organization\\Repository\\AddressRepositoryTrait;",
+            "use Sylius\\B2BKit\\Repository\\AddressRepositoryInterface;",
+            "use Sylius\\Bundle\\CoreBundle\\Doctrine\\ORM\\AddressRepository as BaseAddressRepository;",
+            "",
+            "class AddressRepository extends BaseAddressRepository implements AddressRepositoryInterface",
+            "{",
+            "    use AddressRepositoryTrait;",
+            "}",
+            ""
+          ],
+          "executable": false
+        },
+        "src/Repository/CustomerRepository.php": {
+          "contents": [
+            "<?php",
+            "",
+            "declare(strict_types=1);",
+            "",
+            "namespace App\\Repository;",
+            "",
+            "use Sylius\\B2BKit\\Organization\\Repository\\CustomerRepositoryTrait;",
+            "use Sylius\\B2BKit\\Repository\\CustomerRepositoryInterface;",
+            "use Sylius\\Bundle\\CoreBundle\\Doctrine\\ORM\\CustomerRepository as BaseCustomerRepository;",
+            "",
+            "class CustomerRepository extends BaseCustomerRepository implements CustomerRepositoryInterface",
+            "{",
+            "    use CustomerRepositoryTrait;",
+            "}",
             ""
           ],
           "executable": false
