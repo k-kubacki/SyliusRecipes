@@ -63,6 +63,12 @@
             "        customer:",
             "            classes:",
             "                repository: App\\Repository\\CustomerRepository",
+            "",
+            "sylius_order:",
+            "    resources:",
+            "        order:",
+            "            classes:",
+            "                repository: App\\Repository\\OrderRepository",
             ""
           ],
           "executable": false
@@ -110,6 +116,26 @@
             "class CustomerRepository extends BaseCustomerRepository implements CustomerRepositoryInterface",
             "{",
             "    use CustomerRepositoryTrait;",
+            "}",
+            ""
+          ],
+          "executable": false
+        },
+        "src/Repository/OrderRepository.php": {
+          "contents": [
+            "<?php",
+            "",
+            "declare(strict_types=1);",
+            "",
+            "namespace App\\Repository;",
+            "",
+            "use Sylius\\B2BKit\\Organization\\Repository\\OrderRepositoryTrait;",
+            "use Sylius\\B2BKit\\Repository\\OrderRepositoryInterface;",
+            "use Sylius\\Bundle\\CoreBundle\\Doctrine\\ORM\\OrderRepository as BaseOrderRepository;",
+            "",
+            "class OrderRepository extends BaseOrderRepository implements OrderRepositoryInterface",
+            "{",
+            "    use OrderRepositoryTrait;",
             "}",
             ""
           ],
