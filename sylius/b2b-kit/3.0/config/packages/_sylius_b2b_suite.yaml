@@ -5,10 +5,10 @@ sylius_addressing:
     resources:
         address:
             classes:
-                repository: Sylius\B2BKit\Repository\AddressRepository
+                repository: App\Repository\AddressRepository
 
 sylius_customer:
     resources:
         customer:
             classes:
-                repository: Sylius\B2BKit\Repository\CustomerRepository
+                repository: App\Repository\CustomerRepository
